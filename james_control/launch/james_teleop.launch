@@ -1,0 +1,10 @@
+<launch>
+  <node name="joy" pkg="joy" type="joy_node">
+  </node>
+  <node name="teleop" pkg="teleop_twist_joy" type="teleop_node"
+    respawn="false" output="screen">
+	<param name="enable_button" value="10"/>
+    <remap from="/cmd_vel" to="/drive_controller/cmd_vel" />
+  </node>
+
+</launch>

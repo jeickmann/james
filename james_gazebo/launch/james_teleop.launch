@@ -1,0 +1,5 @@
+<launch>
+	<include file="$(find james_gazebo)/launch/james.launch" />
+	<include file="$(find james_control)/launch/james_control.launch" />
+	<include file="$(find james_control)/launch/james_teleop.launch" />
+</launch>

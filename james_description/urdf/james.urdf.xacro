@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="neesis">
-<!-- 
+
 	<gazebo>
 	  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-	    <robotNamespace>/neesis</robotNamespace>
+	    <robotNamespace>/james</robotNamespace>
       	<robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
 	  </plugin>
 	</gazebo>
- -->
+  
 
 	<xacro:property name="box_length" value=".68" />
 	<xacro:property name="box_width" value=".31" />
