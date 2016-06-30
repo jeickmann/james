@@ -3,7 +3,7 @@
   </node>
   <node name="teleop" pkg="teleop_twist_joy" type="teleop_node"
     respawn="false" output="screen">
-	<param name="enable_button" value="10"/>
+	<param name="enable_button" value="4"/>
     <remap from="/cmd_vel" to="/drive_controller/cmd_vel" />
   </node>
 
