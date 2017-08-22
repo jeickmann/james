@@ -7,7 +7,7 @@ from sensor_msgs.msg import Joy
 def callback(data):
     rospy.loginfo(rospy.get_caller_id() + "I heard %f, %f", data.axes[1], data.axes[5])
     ser.write('#')
-    ser.write(struct.pack('ff', data.axes[5], data.axes[1]))     # write a string
+    ser.write(struct.pack('ff', data.axes[5], -data.axes[1]))     # write a string
          
 def listener():
     # In ROS, nodes are uniquely named. If two nodes with the same
@@ -22,6 +22,6 @@ def listener():
     rospy.spin()
      
 if __name__ == '__main__':
-    ser = serial.Serial('/dev/ttyACM1', 115200)  # open serial port
+    ser = serial.Serial('/dev/ttyUSB0', 115200)  # open serial port
     print(ser.name)         # check which port was really used
     listener()

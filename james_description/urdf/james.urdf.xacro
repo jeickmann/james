@@ -9,14 +9,14 @@
 	</gazebo>
   
 
-	<xacro:property name="box_length" value=".68" />
-	<xacro:property name="box_width" value=".31" />
-	<xacro:property name="box_height" value=".32" />
+	<xacro:property name="box_length" value=".5" />
+	<xacro:property name="box_width" value=".5" />
+	<xacro:property name="box_height" value=".2" />
 	
 	<xacro:property name="wheel_diam" value=".26" />
 	<xacro:property name="wheel_width" value=".075" />
 	
-	<xacro:property name="wheel_axis_offset" value=".20" />
+	<xacro:property name="wheel_axis_offset" value=".10" />
 	
 	<xacro:property name="tail_wheel_diam" value="0.1"/>
 	<xacro:property name="tail_wheel_width" value=".03" />
@@ -187,7 +187,7 @@
 		<origin xyz="${-tail_wheel_diam/2} 0 0" />
 	</joint>
 	
-	<link name="ultrasonic_servo">
+	<link name="camera">
 		<visual>
 			<geometry>
 				<box size="0.04 0.01 0.03" />
@@ -198,15 +198,13 @@
 		<xacro:cube_inertial origin_xyz="0 0 0" mass="0.01" width="0.01" height="0.03" depth="0.04"/>
 	</link>
 	
-	<gazebo reference="ultrasonic_servo">
-	  	<material>Gazebo/Red</material>
-	</gazebo>
-	
-	<joint name="base_to_ultrasonic" type="fixed">
+	<joint name="base_to_camera" type="fixed">
 		<parent link="base_link" />
-		<child link="ultrasonic_servo" />
+		<child link="camera" />
 		<origin xyz="0 0 ${box_height/2}" />
 	</joint>
+
+	
  
 	<xacro:macro name="cube_inertial" params="origin_xyz mass width height depth">
 		<inertial>
