@@ -1,0 +1,3 @@
+<launch>
+	<node name="map_server" pkg="map_server" type="map_server" args="$(find james_ar_nav)/cfg/kt_map1.yml" output="screen"/>
+</launch>
