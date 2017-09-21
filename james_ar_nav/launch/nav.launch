@@ -1,3 +1,7 @@
 <launch>
+	<param name="map_marker_description" command="$(find xacro)/xacro '$(find james_ar_nav)/cfg/kt_map.urdf.xacro'"/>
+	<node name="map_marker_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
+		<remap from="robot_description" to="map_marker_description"/>
+	</node>
 	<node name="map_server" pkg="map_server" type="map_server" args="$(find james_ar_nav)/cfg/kt_map1.yml" output="screen"/>
 </launch>
