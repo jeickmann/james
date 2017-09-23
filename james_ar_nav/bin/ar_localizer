@@ -1,0 +1,6 @@
+#! /usr/bin/env python
+
+import james_ar_nav.ar_localizer
+
+if __name__ == '__main__':
+    james_ar_nav.ar_localizer.init()
